@@ -33,7 +33,7 @@ wj.tools = {
             input.value = '';
         }
     },
-  tableIsCheck: function(options){
+  	tableIsCheck: function(options){
         // 设定默认值:
         var defaults = {
             selectAll: $('#wj-CheckAll'),
