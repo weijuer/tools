@@ -1,7 +1,11 @@
 # tools
 一大波好用的工具哦
 ## 最近在整理工作和学习中使用的js小工具，或者修复bug的解决方案，会定期整理出来，尽情期待！！！
-````
+### tool.wj.js 说明
+
+####1.本小工具基于jQ， 请使用前先引用jQ;
+
+```
 var wj = wj || {};
 
 /*
@@ -11,14 +15,15 @@ var wj = wj || {};
  */
  
 /*
- * 数据常量
+ * 一、数据常量
  */ 
 wj.data = {
-	BASE_URL : $('.wj-content').attr('data-basePath'),
-	userIds: []
+	BASE_URL : $('.wj-content').attr('data-basePath')
 }
 
-//一、工具类
+/*
+ * 二、检验小工具
+ */  
 wj.tools = {
 	isNull: function(value){
 		if(!value || $.trim(value) == '') {
@@ -37,7 +42,7 @@ wj.tools = {
 			input.value = '';
 		}
 	},
-  tableIsCheck: function(options){
+	tableIsCheck: function(options) {
 		// 设定默认值:
 		var defaults = {
 			selectAll: $('#wj-CheckAll'),
@@ -97,4 +102,33 @@ wj.tools = {
 		});
 	}
 }
-````
+```
+
+#### 2. 使用说明 （备注任何情况下都需要使用全路径，防止报错，即wj.tools.XXXX,XXXX为方法名）
+
+##### 2.1 调用方法
+```
+// 全选配置
+var opts = {
+	selectAll: $('#checkAll'),
+	items: $('.checkItem')
+};
+
+wj.tools.tableIsCheck(opts);
+```
+
+##### 2.2 页面初始化
+```
+$(function(){
+
+// 全选配置
+var opts = {
+	selectAll: $('#checkAll'),
+	items: $('.checkItem')
+};
+
+// 初始化
+wj.tools.tableIsCheck(opts);
+
+});
+```
