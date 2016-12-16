@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>测试页面</title>
+		<style>
+			table {
+				width: 100%;
+				border-collapse: collapse;
+				border: 1px solid #ddd;
+			}
+			table thead {
+				background: #ccc;
+			}
+			table tr>td,
+			table tr>th {
+				text-align: center;
+				border: 1px solid #eee;
+			}
+			tr.active {
+				background: #f00;
+			}
+		</style>
+	</head>
+	<body>
+		<table>
+			<thead>
+				<tr>
+					<th><input id="CheckAll" type="checkbox" /></th>
+					<th>序号</th>
+					<th>姓名</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><input class="checkItem" type="checkbox" /></td>
+					<td>1</td>
+					<td>小明</td>
+				</tr>
+				<tr>
+					<td><input class="checkItem" type="checkbox" /></td>
+					<td>2</td>
+					<td>小红</td>
+				</tr>
+				<tr>
+					<td><input class="checkItem" type="checkbox" /></td>
+					<td>3</td>
+					<td>小花</td>
+				</tr>
+				<tr>
+					<td><input class="checkItem" type="checkbox" /></td>
+					<td>4</td>
+					<td>小夏</td>
+				</tr>
+			</tbody>
+		</table>
+		
+		<script type="text/javascript" src="../assets/js/lib/jquery.min.js" ></script>
+		<script type="text/javascript" src="../assets/js/lib/tableIsCheck.jquery.js" ></script>
+		<!--<script type="text/javascript" src="../assets/js/require.js" ></script>-->
+		<script>
+			
+			$(function(){
+				$.tableIsCheck();
+			});
+		</script>
+	</body>
+</html>
