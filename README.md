@@ -3,7 +3,8 @@
 ## 最近在整理工作和学习中使用的js小工具，或者修复bug的解决方案，会定期整理出来，尽情期待！！！
 ### tool.wj.js 说明
 
-####1.本小工具基于jQ， 请使用前先引用jQ;
+#### 一、weiijuer.js
+##### 1.本小工具基于jQ， 请使用前先引用jQ;
 
 ```
 var wj = wj || {};
@@ -131,4 +132,37 @@ var opts = {
 wj.tools.tableIsCheck(opts);
 
 });
+```
+
+#### 二、其他js
+##### 1.js 判断ie8 
+1.1（方式一）
+
+如果只是判断IE版本，没必要动用JQUERY来做，直接可以判断了，，下面是各版本的代码
+
+```
+<!--[if IE]>    
+<h1>您正在使用IE浏览器</h1>    
+<!--[if IE 6]>    
+ <h2>版本 6</h2>    
+<![endif]-->    
+<!--[if IE 7]>    
+<h2>版本 7</h2>    
+<![endif]-->  
+<!--[if gte IE 8]> 
+<h2>版本 8及以上</h2>    
+<![endif]-->  
+<![endif]-->  
+```
+
+1.2 （方式二 推荐）
+```
+
+    var userAgent = window.navigator.userAgent.toLowerCase();
+  
+    $.browser.msie10 = $.browser.msie && /msie 10\.0/i.test(userAgent);
+    $.browser.msie9 = $.browser.msie && /msie 9\.0/i.test(userAgent); 
+    $.browser.msie8 = $.browser.msie && /msie 8\.0/i.test(userAgent);
+    $.browser.msie7 = $.browser.msie && /msie 7\.0/i.test(userAgent);
+    $.browser.msie6 = !$.browser.msie8 && !$.browser.msie7 && $.browser.msie && /msie 6\.0/i.test(userAgent);
 ```
